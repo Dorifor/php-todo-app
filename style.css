@@ -1,0 +1,68 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem 2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+}
+
+.task {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    border-bottom: 3px solid green;
+
+    p, input {
+        flex: 1;
+    }
+
+    button {
+        border: none;
+        background: rgb(216, 216, 216);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(150, 150, 150);
+        padding: .5rem;
+        transition: all .1s;
+
+        svg {
+            pointer-events: none;
+        }
+
+        &:hover {
+            background: rgb(156, 211, 151);
+            color: green;
+        }
+    }
+}
+
+.task.add {
+    padding: 2rem 0;
+    border-bottom: none;
+
+    input {
+        height: 2rem;
+    }
+}
+
+.tasks {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: .5rem;
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        padding: 1rem 30%;
+    }
+}
